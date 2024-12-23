@@ -1,0 +1,50 @@
+Without ISP:
+
+from abc import ABC, abstractmethod
+
+class Printer(ABC):
+    @abstractmethod
+    def print(self):
+        pass
+
+    @abstractmethod
+    def scan(self):
+        pass
+
+    @abstractmethod
+    def fax(self):
+        pass
+
+class BasicPrinter(Printer):
+    def print(self):
+        return "Printing..."
+
+    def scan(self):
+        raise NotImplementedError
+def fax(self):
+        raise NotImplementedError
+
+
+With ISP:
+
+from abc import ABC, abstractmethod
+
+class Printable(ABC):
+    @abstractmethod
+    def print(self):
+        pass
+
+class Scannable(ABC):
+    @abstractmethod
+    def scan(self):
+        pass
+
+class Faxable(ABC):
+    @abstractmethod
+    def fax(self):
+        pass
+
+class BasicPrinter(Printable):
+    def print(self):
+        return "Printing..."
+
